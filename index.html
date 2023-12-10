@@ -9,12 +9,12 @@
         <style>
             @keyframes slideDown {
                 0% {
-                    transform: translateY(-150%);
+                    transform: translateY(-300%);
                     opacity: 0;
                 }
                 100% {
                     transform: translateY(0);
-                    opacity: 100%;
+                    opacity: 1;
                 }
             }
             html, body, div {
@@ -28,9 +28,13 @@
             body {
                 line-height: 1.2;
                 font-family: Arial, Helvetica, sans-serif;
-                text-align: center;
                 background-color: #fff;
                 color: rgba(0, 0, 0, 0.76);
+              	display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                overflow: hidden;
             }
             a {
                 text-decoration: none;
@@ -46,16 +50,14 @@
                 background: #fff;
             }
             #name {
-                font-size: 33px;
+                font-size: 30px;
                 font-weight: 700;
-                margin-top: 150px;
-                animation: 1s ease-out 0s 1 slideDown;
+                animation: 1.2s ease-out 0s 1 slideDown;
             }
-            #job {
-                font-size: 23px;
+            #job #corporation {
+                font-size: 20px;
                 font-weight: bold;
                 margin-top: 35px;
-                padding: 0 15px;
                 animation: 1s ease-out 0s 1 slideDown;
             }
             #corporation {
@@ -64,40 +66,30 @@
                 font-style: italic;
             }
             #contact {
-                font-size: 17px;
+                font-size: 15px;
                 font-weight: 300;
                 font-style: italic;
                 margin-top: 35px;
-                animation: 1s ease-out 0s 1 slideDown;
+                animation: 0.8s ease-out 0s 1 slideDown;
             }
-	    @media (max-width: 700px) {
-		#name {
-		    font-size: 30px;
-	    	}
-	    	#job {
-		    font-size: 20px;
-	    	}
-	    	#contact {
-		    font-size: 15px;
-	    	}
-	    }
         </style>
     </head>
     <body>
-        <div id="name">Jorge Sánchez López</div>
-        <div id="job">Head of IT operations in <br><span id="corporation">Carrefour Spain</span></div>
-        <div id="contact">
-            <a href="mailto:hola@jsanchez.me" title="Email">Email</a>
-            &#10022;
-            <a rel="me" href="https://mastodon.world/@jsanchez0x" title="Mastodon: @jsanchez0x@mastodon.world">Mastodon</a>
-            &#10022;
-            <a href="https://www.linkedin.com/in/jsanchez0x" title="LinkedIn: jsanchez0x">LinkedIn</a>
-            &#10022;
-            <a href="https://www.instagram.com/jsanchez0x" title="Instagram: jsanchez0x">Instagram</a>
-            &#10022;
-            <a href="https://github.com/jsanchez0x" title="GitHub: jsanchez0x">GitHub</a>
-            &#10022;
-            <a href="https://ilogeek.es/" title="Blog: Ilogeek.es">Blog</a>
+        <div id="content">
+            <div id="name">Jorge Sánchez López</div>
+            <div id="job">Head of IT operations in <br><span id="corporation">Carrefour Spain</span></div>
+            <div id="contact">
+                <a href="mailto:hola@jsanchez.me" title="Email">Email</a>
+                &#10022;
+                <a rel="me" href="https://mastodon.world/@jsanchez0x" title="Mastodon: @jsanchez0x@mastodon.world">Mastodon</a>
+                &#10022;
+                <a href="https://www.linkedin.com/in/jsanchez0x" title="LinkedIn: jsanchez0x">LinkedIn</a>
+                &#10022;
+                <a href="https://www.instagram.com/jsanchez0x" title="Instagram: jsanchez0x">Instagram</a>
+                &#10022;
+                <a href="https://github.com/jsanchez0x" title="GitHub: jsanchez0x">GitHub</a>
+                &#10022;
+                <a href="https://ilogeek.es/" title="Blog: Ilogeek.es">Blog</a>
+            </div>
         </div>
     </body>
-</html>
