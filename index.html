@@ -41,7 +41,8 @@
                 color: rgba(0, 0, 0, 0.76);
             }
             a:hover {
-                color: rgba(0, 0, 0, 1);
+                color: rgba(255, 255, 255, 1);
+                background-color: rgba(0, 0, 0, 0.76);
             }
             ::selection {
                 background: #fff;
@@ -67,12 +68,14 @@
                 font-weight: normal;
                 font-style: italic;
             }
-            #contact {
-                font-size: 17px;
-                font-weight: 300;
-                font-style: italic;
+            #contact, #photo {
                 margin-top: 35px;
-                animation: 0.8s ease-out 0s 1 slideDown;
+                font-size: 14px;
+                font-weight: 100;
+                animation: 1.5s ease-out 0s 1 slideDown;
+            }
+            #photo {
+                margin-top: 10px;
             }
         </style>
     </head>
@@ -81,14 +84,21 @@
             <div id="name">Jorge Sánchez López</div>
             <div id="job">Head of IT operations for customers services in <br><span id="corporation">Carrefour Spain</span></div>
             <div id="contact">
-                <a href="mailto:hola@jsanchez.me" title="Email">&#9993;&#65039;</a>&#11049;
-                <a href="https://www.linkedin.com/in/jsanchez0x" title="LinkedIn: jsanchez0x">&#128188;</a>&#11049;
-                <a href="https://github.com/jsanchez0x" title="GitHub: jsanchez0x">&#128025;</a>&#11049;
-                <a href="https://vsco.co/jsanchez0x/gallery" title="VSCO: jsanchez0x">&#128248;</a>&#11049;
-                <a href="https://www.instagram.com/jsanchez0x" title="Instagram: jsanchez0x">&#128247;</a>&#11049;
-                <a rel="me" href="https://mastodon.world/@jsanchez0x" title="Mastodon: @jsanchez0x@mastodon.world">&#128024;</a>&#11049;
-                <a rel="me" href="https://bsky.app/profile/jsanchez.bsky.social" title="Bluesky: @jsanchez.bsky.social">&#129419;</a>&#11049;
-                <a href="https://ilogeek.es/" title="Blog: Ilogeek.es">&#9000;&#65039;</a>
+                // contact:
+                <a href="mailto:hola@jsanchez.me" title="Email">MAIL</a> &#8734;
+                <a href="https://www.linkedin.com/in/jsanchez0x" title="LinkedIn: jsanchez0x">IN</a> &#8734;
+                <a rel="me" href="https://mastodon.world/@jsanchez0x" title="Mastodon: @jsanchez0x@mastodon.world">MSTDN</a> &#8734;
+                <a rel="me" href="https://bsky.app/profile/jsanchez.bsky.social" title="Bluesky: @jsanchez.bsky.social">BSKY</a> &#8734;
+                <a href="https://github.com/jsanchez0x" title="GitHub: jsanchez0x">GH</a> &#8734;
+                <a href="https://ilogeek.es/" title="Blog: Ilogeek.es">ILGK</a>
+            </div>
+            <div id="photo">
+                // photography:
+                <a href="https://vsco.co/jsanchez0x/gallery" title="VSCO: jsanchez0x">VSCO</a> &#8734;
+                <a href="https://www.instagram.com/jsanchez0x" title="Instagram: jsanchez0x">IG</a> &#8734;
+                <a href="https://www.eyeem.com/u/jsanchez0x" title="EyeEm: jsanchez0x">EYEEM</a> &#8734;
+                <a href="https://www.shutterstock.com/es/g/JSanchez0x" title="Shutterstock: jsanchez0x">SSTK</a>
+
             </div>
         </div>
     </body>
