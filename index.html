@@ -230,8 +230,92 @@
                 padding: 0 3px;
             }
 
+            /* Ventana flotante de ayuda (Terminal Modal) */
+            .modal-backdrop {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.45);
+                backdrop-filter: blur(3px);
+                -webkit-backdrop-filter: blur(3px);
+                align-items: center;
+                justify-content: center;
+                z-index: 1000;
+            }
+
+            .modal-backdrop.is-open {
+                display: flex;
+            }
+
+            .modal-box {
+                background-color: var(--bg-color);
+                color: var(--text-color);
+                border: 1px solid var(--hover-bg);
+                padding: 18px 22px;
+                max-width: 340px;
+                width: 90%;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+                border-radius: 4px;
+                animation: 0.15s ease-out 0s 1 slideDown;
+            }
+
+            .modal-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 14px;
+                font-size: 0.85rem;
+                color: var(--muted-color);
+                border-bottom: 1px dashed var(--muted-color);
+                padding-bottom: 8px;
+            }
+
+            #close-modal {
+                background: none;
+                border: none;
+                color: var(--muted-color);
+                cursor: pointer;
+                font-family: inherit;
+                font-size: 0.8rem;
+                padding: 2px 4px;
+            }
+
+            #close-modal:hover {
+                color: var(--text-color);
+            }
+
+            .shortcut-list {
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+            }
+
+            .shortcut-row {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-size: 0.85rem;
+            }
+
+            .shortcut-row kbd {
+                font-family: inherit;
+                background-color: var(--hover-bg);
+                color: var(--hover-text);
+                padding: 1px 6px;
+                border-radius: 2px;
+                font-size: 0.8rem;
+                font-weight: 700;
+            }
+
+            .shortcut-row span {
+                color: var(--text-color);
+            }
+
             @media (prefers-reduced-motion: reduce) {
-                h1, .job, .nav-section {
+                h1, .job, .nav-section, .modal-box {
                     animation: none;
                 }
                 h1::after {
@@ -268,7 +352,7 @@
                 </span>
             </nav>
 
-            <nav class="nav-section" aria-label="Fotografía">
+            <nav class="nav-section photo" aria-label="Fotografía">
                 <span class="label">// photography:</span>
                 <span class="links">
                     <a href="https://www.instagram.com/jsanchez.raw" title="Instagram: jsanchez.raw [i]">IG</a>
@@ -277,6 +361,27 @@
                 </span>
             </nav>
         </main>
+
+        <!-- Ventana modal de ayuda de atajos -->
+        <div id="help-modal" class="modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Atajos de teclado">
+            <div class="modal-box">
+                <div class="modal-header">
+                    <span>// keyboard_shortcuts</span>
+                    <button id="close-modal" aria-label="Cerrar ventana">[esc]</button>
+                </div>
+                <div class="shortcut-list">
+                    <div class="shortcut-row"><kbd>m</kbd> <span>Mail</span></div>
+                    <div class="shortcut-row"><kbd>l</kbd> <span>LinkedIn</span></div>
+                    <div class="shortcut-row"><kbd>g</kbd> <span>GitHub</span></div>
+                    <div class="shortcut-row"><kbd>b</kbd> <span>Blog (Ilogeek)</span></div>
+                    <div class="shortcut-row"><kbd>t</kbd> <span>Mastodon</span></div>
+                    <div class="shortcut-row"><kbd>x</kbd> <span>X</span></div>
+                    <div class="shortcut-row"><kbd>i</kbd> <span>Instagram</span></div>
+                    <div class="shortcut-row"><kbd>s</kbd> <span>Shutterstock</span></div>
+                    <div class="shortcut-row"><kbd>?</kbd> <span>Cerrar / Toggle</span></div>
+                </div>
+            </div>
+        </div>
 
         <script>
             (function() {
@@ -290,6 +395,26 @@
                     'i': 'https://www.instagram.com/jsanchez.raw',
                     's': 'https://www.shutterstock.com/es/g/JSanchez0x'
                 };
+
+                const modal = document.getElementById('help-modal');
+                const closeBtn = document.getElementById('close-modal');
+
+                function toggleModal() {
+                    const isOpen = modal.classList.toggle('is-open');
+                    modal.setAttribute('aria-hidden', !isOpen);
+                }
+
+                function closeModal() {
+                    modal.classList.remove('is-open');
+                    modal.setAttribute('aria-hidden', 'true');
+                }
+
+                closeBtn.addEventListener('click', closeModal);
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) {
+                        closeModal();
+                    }
+                });
 
                 function logShortcuts() {
                     console.log(
@@ -311,12 +436,22 @@
                 logShortcuts();
 
                 document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+                        closeModal();
+                        return;
+                    }
+
                     if (e.metaKey || e.ctrlKey || e.altKey) return;
                     const key = e.key.toLowerCase();
 
-                    if (key === '?') {
-                        logShortcuts();
+                    // Abrir o cerrar con ? (o ¿ en teclado español)
+                    if (e.key === '?' || e.key === '¿') {
+                        toggleModal();
                         return;
+                    }
+
+                    if (modal.classList.contains('is-open')) {
+                        closeModal();
                     }
 
                     if (shortcuts[key]) {
