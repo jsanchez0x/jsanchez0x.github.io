@@ -1,15 +1,80 @@
 <!DOCTYPE html>
-<html lang="es-ES">
+<html lang="es">
     <head>
-        <title>Web personal de Jorge Sánchez López</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Jorge Sánchez López</title>
         <meta name="author" content="Jorge Sánchez López">
+        <meta name="description" content="Web personal de Jorge Sánchez López. Head of the SRE Team en Carrefour Spain.">
+        <link rel="canonical" href="https://jsanchez.me/">
         <link rel="icon" href="favicon.ico">
+
+        <!-- Open Graph / Redes Sociales -->
+        <meta property="og:title" content="Jorge Sánchez López">
+        <meta property="og:description" content="Head of the SRE Team in Carrefour Spain">
+        <meta property="og:type" content="profile">
+        <meta property="og:url" content="https://jsanchez.me/">
+        <meta property="og:locale" content="es_ES">
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Jorge Sánchez López">
+        <meta name="twitter:description" content="Head of the SRE Team in Carrefour Spain">
+        <meta name="twitter:creator" content="@jsanchez0x">
+
+        <!-- Schema.org JSON-LD -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "name": "Jorge Sánchez López",
+          "jobTitle": "Head of the SRE Team",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Carrefour Spain"
+          },
+          "url": "https://jsanchez.me/",
+          "sameAs": [
+            "https://www.linkedin.com/in/jsanchez0x",
+            "https://github.com/jsanchez0x",
+            "https://mastodon.world/@jsanchez0x",
+            "https://x.com/jsanchez0x",
+            "https://ilogeek.es/"
+          ]
+        }
+        </script>
+
+        <!-- Tipografía estilo hacker: JetBrains Mono -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
         <style>
+            :root {
+                --bg-color: #ffffff;
+                --text-color: rgba(0, 0, 0, 0.78);
+                --muted-color: rgba(0, 0, 0, 0.5);
+                --hover-bg: rgba(0, 0, 0, 0.78);
+                --hover-text: #ffffff;
+                --selection-bg: #ffffff;
+                --selection-color: #ffffff;
+            }
+
+            @media (prefers-color-scheme: dark) {
+                :root {
+                    --bg-color: #0e1117;
+                    --text-color: rgba(255, 255, 255, 0.85);
+                    --muted-color: rgba(255, 255, 255, 0.45);
+                    --hover-bg: rgba(255, 255, 255, 0.85);
+                    --hover-text: #0e1117;
+                    --selection-bg: #ffffff;
+                    --selection-color: #ffffff;
+                }
+            }
+
             @keyframes slideDown {
                 0% {
-                    transform: translateY(-300%);
+                    transform: translateY(-20px);
                     opacity: 0;
                 }
                 100% {
@@ -17,86 +82,143 @@
                     opacity: 1;
                 }
             }
-            html, body, div {
+
+            *, *::before, *::after {
+                box-sizing: border-box;
                 margin: 0;
                 padding: 0;
-                border: 0;
-                font-size: 100%;
-                font: inherit;
-                vertical-align: baseline;
             }
+
+            /* Bloqueo total de selección de texto */
+            html, body {
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+
+            ::selection {
+                background: var(--selection-bg);
+                color: var(--selection-color);
+            }
+
+            ::-moz-selection {
+                background: var(--selection-bg);
+                color: var(--selection-color);
+            }
+
             body {
-                line-height: 1.2;
-                font-family: Arial, Helvetica, sans-serif;
-                background-color: #fff;
-                color: rgba(0, 0, 0, 0.76);
-              	display: flex;
+                font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Monaco, Consolas, monospace;
+                line-height: 1.4;
+                background-color: var(--bg-color);
+                color: var(--text-color);
+                display: flex;
                 align-items: center;
                 justify-content: center;
-                height: 90vh;
-                overflow: hidden;
+                min-height: 100vh;
+                min-height: 100dvh;
+                padding: 24px;
             }
-            a {
-                text-decoration: none;
-                color: rgba(0, 0, 0, 0.76);
+
+            main {
+                max-width: 650px;
+                width: 100%;
             }
-            a:hover {
-                color: rgba(255, 255, 255, 1);
-                background-color: rgba(0, 0, 0, 0.76);
-            }
-            ::selection {
-                background: #fff;
-            }
-            ::-moz-selection {
-                background: #fff;
-            }
-            #content {
-                 padding: 0 10px;
-            }
-            #name {
-                font-size: 27px;
+
+            h1 {
+                font-size: 1.75rem;
                 font-weight: 700;
+                letter-spacing: -0.5px;
                 animation: 1.2s ease-out 0s 1 slideDown;
             }
-            #job {
-                font-size: 18px;
+
+            .job {
+                font-size: 1.05rem;
                 margin-top: 15px;
+                font-weight: 400;
                 animation: 1s ease-out 0s 1 slideDown;
             }
-            #job #corporation {
-                font-family: Verdana;
-                font-weight: normal;
+
+            .job .corporation {
                 font-style: italic;
             }
-            #contact, #photo {
+
+            .nav-section {
                 margin-top: 35px;
-                font-size: 14px;
-                font-weight: 100;
+                font-size: 0.875rem;
+                font-weight: 300;
                 animation: 1.5s ease-out 0s 1 slideDown;
             }
-            #photo {
-                margin-top: 10px;
+
+            .nav-section.photo {
+                margin-top: 12px;
+            }
+
+            .label {
+                color: var(--muted-color);
+                margin-bottom: 6px;
+            }
+
+            .links {
+                display: inline-block;
+            }
+
+            a {
+                text-decoration: none;
+                color: var(--text-color);
+                padding: 1px 3px;
+                border-radius: 2px;
+                transition: color 0.15s ease, background-color 0.15s ease;
+            }
+
+            a:hover, a:focus-visible {
+                color: var(--hover-text);
+                background-color: var(--hover-bg);
+                outline: none;
+            }
+
+            .separator {
+                color: var(--muted-color);
+                padding: 0 3px;
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+                h1, .job, .nav-section {
+                    animation: none;
+                }
             }
         </style>
     </head>
     <body>
-        <div id="content">
-            <div id="name">Jorge Sánchez López</div>
-            <div id="job">Head of the SRE Team in <span id="corporation">Carrefour Spain</span></div>
-            <div id="contact">
-                // contact:
-                <a href="mailto:hola@jsanchez.me" title="Email">MAIL</a> &#8734;
-                <a href="https://www.linkedin.com/in/jsanchez0x" title="LinkedIn: jsanchez0x">IN</a> &#8734;
-                <a rel="me" href="https://mastodon.world/@jsanchez0x" title="Mastodon: @jsanchez0x@mastodon.world">MSTDN</a> &#8734;
-                <a href="https://x.com/jsanchez0x" title="X: @jsanchez0x">MSTDN</a> &#8734;
-                <a href="https://ilogeek.es/" title="Blog: Ilogeek.es">ILGK</a> &#8734;
-                <a href="https://github.com/jsanchez0x" title="GitHub: jsanchez0x">GH</a>
-            </div>
-            <div id="photo">
-                // photography:
-                <a href="https://www.instagram.com/jsanchez.raw" title="Instagram: jsanchez.raw">IG</a> &#8734;
-                <a href="https://www.shutterstock.com/es/g/JSanchez0x" title="Shutterstock: jsanchez0x">SSTK</a>
+        <main>
+            <h1>Jorge Sánchez López</h1>
+            <p class="job">Head of the SRE Team in <span class="corporation">Carrefour Spain</span></p>
 
-            </div>
-        </div>
+            <nav class="nav-section" aria-label="Contacto">
+                <span class="label">// contact:</span>
+                <span class="links">
+                    <a href="mailto:hola@jsanchez.me" title="Email">MAIL</a>
+                    <span class="separator" aria-hidden="true">&#8734;</span>
+                    <a href="https://www.linkedin.com/in/jsanchez0x" title="LinkedIn: jsanchez0x">IN</a>
+                    <span class="separator" aria-hidden="true">&#8734;</span>
+                    <a rel="me" href="https://mastodon.world/@jsanchez0x" title="Mastodon: @jsanchez0x@mastodon.world">MSTDN</a>
+                    <span class="separator" aria-hidden="true">&#8734;</span>
+                    <a href="https://x.com/jsanchez0x" title="X: @jsanchez0x">X</a>
+                    <span class="separator" aria-hidden="true">&#8734;</span>
+                    <a href="https://ilogeek.es/" title="Blog: Ilogeek.es">ILGK</a>
+                    <span class="separator" aria-hidden="true">&#8734;</span>
+                    <a href="https://github.com/jsanchez0x" title="GitHub: jsanchez0x">GH</a>
+                </span>
+            </nav>
+
+            <nav class="nav-section photo" aria-label="Fotografía">
+                <span class="label">// photography:</span>
+                <span class="links">
+                    <a href="https://www.instagram.com/jsanchez.raw" title="Instagram: jsanchez.raw">IG</a>
+                    <span class="separator" aria-hidden="true">&#8734;</span>
+                    <a href="https://www.shutterstock.com/es/g/JSanchez0x" title="Shutterstock: jsanchez0x">SSTK</a>
+                </span>
+            </nav>
+        </main>
     </body>
+</html>
