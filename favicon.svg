@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      :root {
+        --bg: #ffffff;
+        --border: #d1d5db;
+        --j-color: #059669;
+        --cursor-color: #047857;
+        --prompt-color: #0f172a;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0e1117;
+          --border: #21262d;
+          --j-color: #00ff66;
+          --cursor-color: #00ff66;
+          --prompt-color: #ffffff;
+        }
+      }
+      .bg { fill: var(--bg); stroke: var(--border); stroke-width: 1; }
+      .j-glyph { fill: var(--j-color); }
+      .cursor { fill: var(--cursor-color); }
+      .prompt { fill: var(--prompt-color); }
+    </style>
+  </defs>
+
+  <!-- Fondo app/terminal redondeado -->
+  <rect class="bg" x="1.5" y="1.5" width="29" height="29" rx="6" />
+
+  <!-- J pixel-art hacker -->
+  <path class="j-glyph" d="M11 7 h10 v13 h-2 v2 h-2 v1 h-5 v-1 h-2 v-2 h-1 v-5 h4 v4 h1 v1 h2 v-1 h1 v-9 h-6 z" />
+
+  <!-- Detalle terminal hacker: prompt '>' y cursor '_' -->
+  <path class="prompt" d="M23 17 L25.5 19 L23 21 L23.8 21.6 L27 19 L23.8 16.4 Z" />
+  <rect class="cursor" x="23" y="22" width="4.5" height="1.2" rx="0.3" />
+</svg>
