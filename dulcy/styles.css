@@ -10,10 +10,10 @@
   --tag-color: #515154;
   --stat-gradient: linear-gradient(180deg, #1d1d1f 0%, #434344 100%);
   --headline-gradient: linear-gradient(180deg, #1d1d1f 0%, #515154 100%);
-  --iphone-chassis-bg: linear-gradient(145deg, #e4e4e9 0%, #cacace 40%, #e2e2e6 100%);
-  --iphone-rim: rgba(0, 0, 0, 0.12);
-  --iphone-button-bg: #b2b2b8;
-  --iphone-shadow: 0 30px 65px -15px rgba(0, 0, 0, 0.22), 0 10px 24px -10px rgba(0, 0, 0, 0.1);
+  --iphone-chassis-bg: linear-gradient(145deg, #242427 0%, #121214 45%, #1e1e21 100%);
+  --iphone-rim: rgba(255, 255, 255, 0.16);
+  --iphone-button-bg: #1c1c1f;
+  --iphone-shadow: 0 35px 75px -15px rgba(0, 0, 0, 0.42), 0 12px 28px -10px rgba(0, 0, 0, 0.22);
   --badge-sweet-spot: #f3e5c0;
   --badge-sweet-spot-text: #3c3218;
 }
@@ -30,10 +30,10 @@
     --tag-color: #a1a1a6;
     --stat-gradient: linear-gradient(180deg, #ffffff 0%, #a1a1a6 100%);
     --headline-gradient: linear-gradient(180deg, #ffffff 0%, #b0b0b5 100%);
-    --iphone-chassis-bg: linear-gradient(145deg, #3a3a3d 0%, #1e1e20 40%, #323235 100%);
-    --iphone-rim: rgba(255, 255, 255, 0.14);
-    --iphone-button-bg: #48484c;
-    --iphone-shadow: 0 35px 80px -15px rgba(0, 0, 0, 0.85), 0 10px 25px -8px rgba(0, 0, 0, 0.6);
+    --iphone-chassis-bg: linear-gradient(145deg, #28282c 0%, #101012 45%, #222225 100%);
+    --iphone-rim: rgba(255, 255, 255, 0.22);
+    --iphone-button-bg: #222225;
+    --iphone-shadow: 0 35px 85px -15px rgba(0, 0, 0, 0.95), 0 12px 28px -8px rgba(0, 0, 0, 0.7);
     --badge-sweet-spot: #423b28;
     --badge-sweet-spot-text: #f5e4bd;
   }
@@ -211,6 +211,7 @@ header {
   border-radius: 50px;
   box-shadow:
     0 0 0 1px var(--iphone-rim),
+    0 0 0 2px rgba(0, 0, 0, 0.35),
     var(--iphone-shadow);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
 }
