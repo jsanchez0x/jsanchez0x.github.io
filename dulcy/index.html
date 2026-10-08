@@ -42,21 +42,39 @@
         </div>
     </header>
 
-    <main class="container hero-section">
+    <main class="container">
         <!-- Hero Section -->
-        <div class="reveal">
-            <img src="img/dulcy_icon.png" alt="Dulcy app icon" class="hero-app-icon" width="120" height="120" fetchpriority="high">
+        <section class="hero-section reveal">
+            <div class="hero-icon-wrapper">
+                <img src="img/dulcy_icon.png" alt="Dulcy app icon" class="hero-app-icon" width="110" height="110" fetchpriority="high">
+            </div>
             <p class="hero-tagline">The Essential Photo Gear Companion for iOS</p>
-            <h2 class="hero-headline">Organize your gear. Nail peak optical sharpness in every shot.</h2>
+            <h2 class="hero-headline">Organize your gear.<br>Nail peak optical sharpness in every shot.</h2>
             <p class="hero-description">
-                The native, distraction-free tool engineered by and for photographers. Instant access to the optimal sweet spot for every lens in your bag—no cellular connection required, with interactive iOS widgets.
+                The native, distraction-free tool engineered by and for photographers. Instant access to the optimal sweet spot for every lens in your bag.
             </p>
             <div class="hero-cta">
                 <a href="https://apps.apple.com/app/dulcy/id6761924050" class="app-store-button" target="_blank" rel="noopener noreferrer">
-                    <img src="img/badge-download-on-the-app-store.svg" alt="Download on the App Store" width="168" height="56">
+                    <img src="img/badge-download-on-the-app-store.svg" alt="Download on the App Store" width="168" height="52">
                 </a>
             </div>
-        </div>
+
+            <!-- iPhone 18 Pro Hero Showcase -->
+            <div class="hero-device-wrapper">
+                <div class="iphone-device iphone-device-large">
+                    <div class="iphone-chassis">
+                        <div class="iphone-btn-power"></div>
+                        <div class="iphone-btn-action"></div>
+                        <div class="iphone-btn-vol-up"></div>
+                        <div class="iphone-btn-vol-down"></div>
+                        <div class="iphone-screen">
+                            <div class="iphone-island"></div>
+                            <img src="img/screenshot_01_eng.jpg" alt="Dulcy main dashboard showing optical sweet spots" width="300" height="651">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Big Stats (Apple-style numbers) -->
         <section class="stats-section reveal">
@@ -82,146 +100,155 @@
             </div>
         </section>
 
-        <!-- Screenshots Gallery in iPhone 18 Mockups -->
-        <section class="section-header reveal">
-            <span class="section-tag">Design &amp; Experience</span>
-            <h3 class="section-title">Dulcy on your iPhone</h3>
-            <p class="section-subtitle">A refined editorial interface built for rapid glanceability on location.</p>
-        </section>
-
-        <div class="screenshots-section">
-            <div class="iphone-frame reveal stagger-1">
-                <div class="iphone-screen">
-                    <img src="img/screenshot_01_eng.jpg" alt="Dulcy - My Lenses with optical sweet spots" width="220" height="476" loading="lazy">
-                </div>
-                <span class="iphone-caption">Sweet Spots</span>
-            </div>
-
-            <div class="iphone-frame reveal stagger-2">
-                <div class="iphone-screen">
-                    <img src="img/screenshot_07_eng.jpg" alt="Dulcy - iOS Home Screen Widget" width="220" height="476" loading="lazy">
-                </div>
-                <span class="iphone-caption">Home Screen Widgets</span>
-            </div>
-
-            <div class="iphone-frame reveal stagger-3">
-                <div class="iphone-screen">
-                    <img src="img/screenshot_02_eng.jpg" alt="Dulcy - Fast camera switcher" width="220" height="476" loading="lazy">
-                </div>
-                <span class="iphone-caption">Camera Switcher</span>
-            </div>
-
-            <div class="iphone-frame reveal stagger-4">
-                <div class="iphone-screen">
-                    <img src="img/screenshot_03_eng.jpg" alt="Dulcy - Curated lens brands catalog" width="220" height="476" loading="lazy">
-                </div>
-                <span class="iphone-caption">Curated Catalog</span>
-            </div>
-
-            <div class="iphone-frame reveal stagger-5">
-                <div class="iphone-screen">
-                    <img src="img/screenshot_04_eng.jpg" alt="Dulcy - Adding lens with auto sweet spot" width="220" height="476" loading="lazy">
-                </div>
-                <span class="iphone-caption">Add Lens</span>
-            </div>
-
-            <div class="iphone-frame reveal stagger-6">
-                <div class="iphone-screen">
-                    <img src="img/screenshot_05_eng.jpg" alt="Dulcy - Camera bag and settings" width="220" height="476" loading="lazy">
-                </div>
-                <span class="iphone-caption">Camera Bag &amp; Setups</span>
-            </div>
-
-            <div class="iphone-frame reveal stagger-1">
-                <div class="iphone-screen">
-                    <img src="img/screenshot_06_eng.jpg" alt="Dulcy - Custom and vintage gear" width="220" height="476" loading="lazy">
-                </div>
-                <span class="iphone-caption">Custom &amp; Vintage Glass</span>
-            </div>
-        </div>
-
-        <!-- Deep Dive Stories -->
-        <section class="section-header reveal">
-            <span class="section-tag">Field Accuracy</span>
-            <h3 class="section-title">Crafted for your real photography workflow</h3>
-            <p class="section-subtitle">Every detail in Dulcy is designed to answer real questions behind the viewfinder.</p>
-        </section>
-
-        <div class="stories-grid">
-            <article class="story-card featured reveal">
-                <span class="section-tag">Optical Physics</span>
-                <h3>Why does your lens's sweet spot matter?</h3>
-                <p>
-                    Every photographic lens exhibits optical aberrations (spherical, chromatic, and coma) when wide open. Stopping down significantly reduces these flaws, but closing too far (like f/16 or f/22) introduces optical diffraction that irreversibly softens resolution and fine detail.
-                </p>
-                <p>
-                    The <strong>sweet spot</strong> is the sweet aperture range—typically 2 to 3 stops down from maximum aperture—where glass delivers its most breathtaking edge-to-edge sharpness. Dulcy gives you this optimal number instantly, saving you from guessing or consulting complex MTF charts in the middle of a shoot.
-                </p>
-            </article>
-
-            <article class="story-card reveal stagger-1">
+        <!-- Feature Row 1: Widgets on Home Screen (Text Left / iPhone Right) -->
+        <section class="feature-row reveal">
+            <div class="feature-content">
                 <span class="section-tag">iOS WidgetKit</span>
-                <h3>Your gear on your Home Screen, hands-free</h3>
+                <h3>Your gear on your Home Screen, hands-free.</h3>
                 <p>
-                    When both hands are busy balancing your camera and tripod, unlocking your phone and browsing an app breaks your flow. Dulcy's interactive widgets present your active camera and best apertures at a glance.
+                    When both hands are busy balancing your camera and tripod, unlocking your phone and browsing an app breaks your flow. Dulcy's interactive widgets display your active camera and best apertures at a glance.
                 </p>
-                <p>
-                    Available in small, medium, and large layouts across your Home Screen or Lock Screen, fully optimized for iOS Light, Dark, and Tinted modes.
-                </p>
-            </article>
-
-            <article class="story-card reveal stagger-2">
-                <span class="section-tag">Smart Camera Bag</span>
-                <h3>Multi-body setups with instant swipe copy</h3>
-                <p>
-                    Switch active bodies in a single tap from the dashboard header. Shooting the same 50mm prime on two different camera bodies? Copy lenses across cameras with a simple swipe gesture without re-entering settings.
-                </p>
-                <p>
-                    Plus, easily register manual glass, vintage lenses, or bespoke bodies not in the catalog in just seconds.
-                </p>
-            </article>
-        </div>
-
-        <!-- Features Bento Grid -->
-        <section class="section-header reveal">
-            <span class="section-tag">Specifications</span>
-            <h3 class="section-title">Everything you need, nothing you don't</h3>
-            <p class="section-subtitle">No feature bloat, no subscription walls, no ads. A razor-sharp tool for demanding photographers.</p>
+                <ul class="feature-bullet-list">
+                    <li>Configure up to 3 lens slots via App Intents.</li>
+                    <li>Available in small, medium, and large layouts.</li>
+                    <li>Native support for iOS Light, Dark, and Tinted modes.</li>
+                </ul>
+            </div>
+            <div class="feature-visual">
+                <div class="iphone-device">
+                    <div class="iphone-chassis">
+                        <div class="iphone-btn-power"></div>
+                        <div class="iphone-btn-action"></div>
+                        <div class="iphone-btn-vol-up"></div>
+                        <div class="iphone-btn-vol-down"></div>
+                        <div class="iphone-screen">
+                            <div class="iphone-island"></div>
+                            <img src="img/screenshot_07_eng.jpg" alt="Dulcy interactive widget on iOS Home Screen" width="280" height="608" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <div class="features-section">
-            <article class="feature-card reveal stagger-1">
-                <h3>Home Screen Widgets</h3>
-                <p>Glance at your active camera setup and optimal lens apertures right from your Home Screen or Lock Screen without opening the app.</p>
-            </article>
-            <article class="feature-card reveal stagger-2">
-                <h3>Optical Sweet Spots</h3>
-                <p>Quickly reference the exact aperture range where each of your lenses delivers peak sharpness and maximum optical contrast.</p>
-            </article>
-            <article class="feature-card reveal stagger-3">
-                <h3>Curated Catalog &amp; Search</h3>
-                <p>Built-in database with 95+ camera bodies and lenses from 10 top brands, featuring instant predictive search and brand filters.</p>
-            </article>
-            <article class="feature-card reveal stagger-4">
-                <h3>Multi-Camera Bag &amp; Copy</h3>
-                <p>Assign lenses to specific camera bodies, switch active bodies on the fly, and copy lenses between cameras with a simple swipe.</p>
-            </article>
-            <article class="feature-card reveal stagger-5">
-                <h3>Custom &amp; Vintage Gear</h3>
-                <p>Easily register manual, analog or vintage lenses and cameras not in the catalog, with your own tailored sweet spot values.</p>
-            </article>
-            <article class="feature-card reveal stagger-6">
-                <h3>Synced &amp; 100% Private</h3>
-                <p>End-to-end private iCloud sync across your devices. No accounts, no sign-ups, no tracking, and zero analytics—fully functional offline.</p>
-            </article>
-        </div>
+        <!-- Feature Row 2: Multi-Camera Bag (iPhone Left / Text Right) -->
+        <section class="feature-row reverse reveal">
+            <div class="feature-content">
+                <span class="section-tag">Multi-Camera Management</span>
+                <h3>Organized by camera body with instant swipe copy.</h3>
+                <p>
+                    Manage each camera body independently. Shooting the same 50mm prime on two different camera bodies? Copy lenses across setups with a single swipe gesture without re-entering settings.
+                </p>
+                <ul class="feature-bullet-list">
+                    <li>Quick camera switcher right from the dashboard header.</li>
+                    <li>Rapid lens duplication with full swipe action.</li>
+                    <li>Customizable lens ordering by shooting priority.</li>
+                </ul>
+            </div>
+            <div class="feature-visual">
+                <div class="iphone-device">
+                    <div class="iphone-chassis">
+                        <div class="iphone-btn-power"></div>
+                        <div class="iphone-btn-action"></div>
+                        <div class="iphone-btn-vol-up"></div>
+                        <div class="iphone-btn-vol-down"></div>
+                        <div class="iphone-screen">
+                            <div class="iphone-island"></div>
+                            <img src="img/screenshot_02_eng.jpg" alt="Quick camera switcher in Dulcy" width="280" height="608" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <!-- Call To Action -->
+        <!-- Feature Row 3: Curated Catalog & Search (Text Left / iPhone Right) -->
+        <section class="feature-row reveal">
+            <div class="feature-content">
+                <span class="section-tag">Built-in Catalog v1.3</span>
+                <h3>95+ cameras and 10 brands with instant search.</h3>
+                <p>
+                    Find any camera or lens in seconds with the predictive text search and rapid brand filter chips (Sony, Canon, Nikon, Fujifilm, Panasonic, Sigma, Tamron, Viltrox, Laowa, and Samyang).
+                </p>
+                <ul class="feature-bullet-list">
+                    <li>Auto-populated sweet spots across thousands of combos.</li>
+                    <li>Horizontal brand filter chips for immediate access.</li>
+                    <li>Expanded database with modern and iconic classics.</li>
+                </ul>
+            </div>
+            <div class="feature-visual">
+                <div class="iphone-device">
+                    <div class="iphone-chassis">
+                        <div class="iphone-btn-power"></div>
+                        <div class="iphone-btn-action"></div>
+                        <div class="iphone-btn-vol-up"></div>
+                        <div class="iphone-btn-vol-down"></div>
+                        <div class="iphone-screen">
+                            <div class="iphone-island"></div>
+                            <img src="img/screenshot_04_eng.jpg" alt="Adding lens sheet with auto-filled sweet spot" width="280" height="608" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Row 4: Custom & Vintage Glass (iPhone Left / Text Right) -->
+        <section class="feature-row reverse reveal">
+            <div class="feature-content">
+                <span class="section-tag">Manual &amp; Classic Glass</span>
+                <h3>Add your vintage and bespoke optics in seconds.</h3>
+                <p>
+                    Shooting with adapted, manual, or vintage analog glass? Dulcy lets you register any custom combination with brand, name, and tailored sweet spot aperture so it's always ready.
+                </p>
+                <ul class="feature-bullet-list">
+                    <li>Custom gear form for unlisted manual lenses and bodies.</li>
+                    <li>Full support for aperture ranges (e.g. f/5.6 - f/8) or fixed values.</li>
+                    <li>Automatic encrypted iCloud sync across all your devices.</li>
+                </ul>
+            </div>
+            <div class="feature-visual">
+                <div class="iphone-device">
+                    <div class="iphone-chassis">
+                        <div class="iphone-btn-power"></div>
+                        <div class="iphone-btn-action"></div>
+                        <div class="iphone-btn-vol-up"></div>
+                        <div class="iphone-btn-vol-down"></div>
+                        <div class="iphone-screen">
+                            <div class="iphone-island"></div>
+                            <img src="img/screenshot_06_eng.jpg" alt="Custom lens registration sheet for vintage glass" width="280" height="608" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Optical Science Banner -->
+        <section class="optical-science-card reveal">
+            <span class="section-tag">Optical Physics</span>
+            <h3>Why does your lens's sweet spot matter?</h3>
+            <p>
+                Every lens exhibits optical aberrations when shot wide open. Stopping down minimizes these flaws, but closing too far (like f/16 or f/22) introduces diffraction that softens fine details. The <strong>sweet spot</strong> is that golden aperture range where your glass delivers peak resolution from corner to corner.
+            </p>
+            <div class="aperture-scale">
+                <div class="aperture-step">
+                    <span class="aperture-val">f/1.4 - f/2.8</span>
+                    <span class="aperture-note">Optical Aberrations</span>
+                </div>
+                <div class="aperture-step optimal">
+                    <span class="aperture-val">f/5.6 - f/8</span>
+                    <span class="aperture-note">★ Optimal Sweet Spot</span>
+                </div>
+                <div class="aperture-step">
+                    <span class="aperture-val">f/16 - f/22</span>
+                    <span class="aperture-note">Diffraction Softening</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
         <section class="cta-section reveal">
             <h2>Nail peak sharpness in every shot</h2>
             <p>Download Dulcy on the App Store today and start shooting knowing the real optical potential of every lens you own.</p>
             <a href="https://apps.apple.com/app/dulcy/id6761924050" class="app-store-button" target="_blank" rel="noopener noreferrer">
-                <img src="img/badge-download-on-the-app-store.svg" alt="Download on the App Store" width="168" height="56">
+                <img src="img/badge-download-on-the-app-store.svg" alt="Download on the App Store" width="168" height="52">
             </a>
         </section>
     </main>
@@ -257,7 +284,6 @@
                     observer.observe(el);
                 });
             } else {
-                // Fallback for older browsers
                 reveals.forEach(function (el) {
                     el.classList.add('is-visible');
                 });
